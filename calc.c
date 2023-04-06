@@ -31,6 +31,14 @@ double power(double x, double m) {
     return pow(x, m);
 }
 
+double average(double arr[], int n) {
+    double sum = 0;
+    for (int i = 0; i < n; i++) {
+        sum += arr[i];
+    }
+    return sum / n;
+}
+
 int main() {
     double num1, num2;
     printf("Enter two numbers: ");
