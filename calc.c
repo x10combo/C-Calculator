@@ -1,86 +1,48 @@
 #include <stdio.h>
 #include <math.h>
 
-float add(float num1, float num2) {
-    return num1 + num2;
+// Function to add two numbers
+double add(double x, double y) {
+    return x + y;
 }
 
-float subtract(float num1, float num2) {
-    return num1 - num2;
+// Function to subtract two numbers
+double subtract(double x, double y) {
+    return x - y;
 }
 
-float multiply(float num1, float num2) {
-    return num1 * num2;
+// Function to multiply two numbers
+double multiply(double x, double y) {
+    return x * y;
 }
 
-float divide(float num1, float num2) {
-    if (num2 == 0) {
-        printf("Error: division by zero!\n");
-        return 0;
-    }
-    return num1 / num2;
+// Function to divide two numbers
+double divide(double x, double y) {
+    return x / y;
 }
 
-float square_root(float num) {
-    if (num < 0) {
-        printf("Error: square root of a negative number!\n");
-        return 0;
-    }
-    return sqrt(num);
+// Function to find the square root of a number
+double squareRoot(double x) {
+    return sqrt(x);
 }
 
-float power(float num, int exponent) {
-    return pow(num, exponent);
+// Function to find the power of a number
+double power(double x, double m) {
+    return pow(x, m);
 }
 
 int main() {
-    int choice;
-    float num1, num2, result;
-    int exponent;
+    double num1, num2;
+    printf("Enter two numbers: ");
+    scanf("%lf %lf", &num1, &num2);
 
-    printf("Please select an operation:\n");
-    printf("1. Addition\n");
-    printf("2. Subtraction\n");
-    printf("3. Multiplication\n");
-    printf("4. Division\n");
-    printf("5. Square root\n");
-    printf("6. Power\n");
-
-    scanf("%d", &choice);
-
-    if (choice >= 1 && choice <= 4) {
-        printf("Enter two numbers: ");
-        scanf("%f %f", &num1, &num2);
-    } else if (choice == 5) {
-        printf("Enter a number: ");
-        scanf("%f", &num1);
-    } else if (choice == 6) {
-        printf("Enter a number and an exponent: ");
-        scanf("%f %d", &num1, &exponent);
-    } else {
-        printf("Invalid choice!\n");
-        return 0;
-    }
-
-    if (choice == 1) {
-        result = add(num1, num2);
-        printf("%.2f + %.2f = %.2f\n", num1, num2, result);
-    } else if (choice == 2) {
-        result = subtract(num1, num2);
-        printf("%.2f - %.2f = %.2f\n", num1, num2, result);
-    } else if (choice == 3) {
-        result = multiply(num1, num2);
-        printf("%.2f * %.2f = %.2f\n", num1, num2, result);
-    } else if (choice == 4) {
-        result = divide(num1, num2);
-        printf("%.2f / %.2f = %.2f\n", num1, num2, result);
-    } else if (choice == 5) {
-        result = square_root(num1);
-        printf("sqrt(%.2f) = %.2f\n", num1, result);
-    } else if (choice == 6) {
-        result = power(num1, exponent);
-        printf("%.2f^%d = %.2f\n", num1, exponent, result);
-    }
+    // Perform various operations
+    printf("Sum: %lf\n", add(num1, num2));
+    printf("Difference: %lf\n", subtract(num1, num2));
+    printf("Product: %lf\n", multiply(num1, num2));
+    printf("Quotient: %lf\n", divide(num1, num2));
+    printf("Square root of first number: %lf\n", squareRoot(num1));
+    printf("First number raised to the power of second number: %lf\n", power(num1, num2));
 
     return 0;
 }
